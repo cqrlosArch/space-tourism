@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
 
-import bgDesktop from '../assets/destination/background-destination-desktop.jpg';
-import bgTablet from '../assets/destination/background-destination-tablet.jpg';
+// import bgDesktop from '../assets/destination/background-destination-desktop.jpg';
+// import bgTablet from '../assets/destination/background-destination-tablet.jpg';
 import bgMobile from '../assets/destination/background-destination-mobile.jpg';
 
 const DestinationsStyled = styled.section`
