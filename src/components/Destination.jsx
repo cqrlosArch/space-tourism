@@ -70,9 +70,9 @@ const Destination = ({ dest }) => {
       <DestPicture>
         <source
           type="image/webp"
-          srcSet={process.env.PUBLIC_URL + dest.images.webp}
+          srcSet={`${process.env.PUBLIC_URL}/${dest.images.webp}`}
         />
-        <img src={process.env.PUBLIC_URL + dest.images.png} alt={dest.name} />
+        <img src={`${process.env.PUBLIC_URL}/${dest.images.png}`} alt={dest.name} />
       </DestPicture>
       <DestName>{dest.name}</DestName>
       <DestText>{dest.description}</DestText>
