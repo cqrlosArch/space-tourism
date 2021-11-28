@@ -7,7 +7,7 @@ import logo from '../assets/shared/logo.svg';
 import { useState } from 'react';
 
 const HeaderStyled = styled.header`
-  position: fixed;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content:space-between;

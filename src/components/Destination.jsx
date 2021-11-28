@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MiniNavBar from './MiniNavBar';
 
 const DestinationStyled = styled.article`
   display: grid;
@@ -18,7 +19,8 @@ const DestPicture = styled.picture`
 `;
 
 const DestName = styled.h2`
-  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
 `;
 const DestText = styled.p`
   text-align: center;
@@ -34,7 +36,6 @@ const DestInfo = styled.div`
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
-
 `;
 
 const DestWrapper = styled.div`
@@ -49,17 +50,14 @@ const DestWrapper = styled.div`
     font-size: 14px;
     letter-spacing: 2.36px;
     text-transform: uppercase;
-    margin-bottom: .4rem;
-
+    margin-bottom: 0.4rem;
   }
 
   & .info-subtitle {
-   
-
     font-family: 'Bellefair', serif;
     font-size: 28px;
     text-transform: uppercase;
-    margin:0;
+    margin: 0;
   }
 `;
 
@@ -72,8 +70,12 @@ const Destination = ({ dest }) => {
           type="image/webp"
           srcSet={`${process.env.PUBLIC_URL}/${dest.images.webp}`}
         />
-        <img src={`${process.env.PUBLIC_URL}/${dest.images.png}`} alt={dest.name} />
+        <img
+          src={`${process.env.PUBLIC_URL}/${dest.images.png}`}
+          alt={dest.name}
+        />
       </DestPicture>
+      <MiniNavBar />
       <DestName>{dest.name}</DestName>
       <DestText>{dest.description}</DestText>
       <DestSeparation />
