@@ -19,13 +19,12 @@ const { destinations, crew, technology } = data;
 
 function App() {
   return (
-
     <Router>
-    <GlobalStyle/>
+      <GlobalStyle />
       <Wrapper>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route index path="/" element={<HomePage />} />
           <Route path="destination" element={<DestinationsPage />}>
             <Route index element={<Destination dest={destinations[0]} />} />
             {destinations.map((dest) => (

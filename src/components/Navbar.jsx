@@ -2,26 +2,23 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const NavbarStyled = styled.nav`
-  position: absolute;
-  transition: transform 0.3s ease-in-out;
   height: 100vh;
 `;
 
 const ListStyled = styled.ul`
+  transition: transform 0.3s ease-in-out;
   height: inherit;
   inset: 0 0 0 30%;
   z-index: 1;
   position: fixed;
   padding: min(10rem, 15vh) 2rem;
-  filter: opacity(${({ open }) => (open ? '1' : '0')});
   visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
   background-color: rgba(0, 0, 0, 0.5);
   transform: translateX(${({ open }) => (open ? '0' : '240px')});
   @supports (backdrop-filter: blur(2rem)) {
+    backdrop-filter: opacity(${({ open }) => (open ? '1' : '0')}) blur(2rem);
     background-color: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(2rem);
   }
-
 `;
 
 const ItemStyled = styled.li`
@@ -44,7 +41,7 @@ const LinkStyled = styled(NavLink)`
 
 const Navbar = ({ open }) => {
   return (
-    <NavbarStyled >
+    <NavbarStyled>
       <ListStyled open={open}>
         <ItemStyled>
           <LinkStyled

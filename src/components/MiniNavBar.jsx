@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, NavLink, useLocation } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -36,6 +36,8 @@ const StyledLink = styled(NavLink)`
 `;
 
 const MiniNavBar = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <>
       <Nav>
@@ -43,7 +45,6 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => (navData.isActive ? '.active' : '')}
-              exact
               to="/destination/moon"
             >
               Moon
@@ -52,7 +53,6 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => (navData.isActive ? '.active' : '')}
-              exact
               to="/destination/mars"
             >
               Mars
@@ -61,7 +61,6 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => (navData.isActive ? '.active' : '')}
-              exact
               to="/destination/europa"
             >
               Europa
@@ -70,7 +69,6 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => (navData.isActive ? '.active' : '')}
-              exact
               to="/destination/titan"
             >
               Titan
