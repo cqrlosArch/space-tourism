@@ -62,7 +62,7 @@ const DestWrapper = styled.div`
 `;
 
 const Destination = ({ dest }) => {
-  console.log(dest);
+
   return (
     <DestinationStyled>
       <DestPicture>

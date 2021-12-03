@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import {  NavLink } from "react-router-dom";
-
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const Nav = styled.nav`
   text-align: center;
@@ -21,7 +20,6 @@ const StyledLink = styled(NavLink)`
   &.active {
     background-color: #fff;
   }
-
 `;
 
 const Slider = () => {
@@ -29,23 +27,19 @@ const Slider = () => {
     <>
       <Nav>
         <StyledLink
-          className={(navData) => (navData.isActive ? ".active" : "")}
-          exact
+          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/douglashurley"
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? ".active" : "")}
-          exact
+          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/markshuttleworth"
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? ".active" : "")}
-          exact
+          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/victorglover"
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? ".active" : "")}
-          exact
+          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/Anoushehansari"
         />
       </Nav>
