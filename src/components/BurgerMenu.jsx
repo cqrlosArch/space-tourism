@@ -3,8 +3,9 @@ import close from '../assets/shared/icon-close.svg';
 import hamburger from '../assets/shared/icon-hamburger.svg';
 
 const BurgerMenuStyled = styled.div`
-  background: ${({ open }) =>(open ? `url(${close})` : `url(${hamburger})`)} no-repeat center;
-  background-size:50%;
+  background: ${({ open }) => (open ? `url(${close})` : `url(${hamburger})`)}
+    no-repeat center;
+  background-size: 50%;
   width: 50px;
   height: 50px;
   display: flex;
@@ -12,13 +13,14 @@ const BurgerMenuStyled = styled.div`
   justify-content: center;
   cursor: pointer;
   margin-right: 5px;
-  position: relative;
+  right: 0;
+  position: absolute;
   transition: background 0.3s ease-in-out;
   z-index: 10;
 `;
 
-const BurgerMenu = ({ toggleNavbar,open }) => {
-  return <BurgerMenuStyled open={open} onClick={toggleNavbar}/>;
+const BurgerMenu = ({ toggleNavbar, open }) => {
+  return <BurgerMenuStyled open={open} onClick={toggleNavbar} />;
 };
 
 export default BurgerMenu;
