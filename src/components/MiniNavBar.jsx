@@ -1,5 +1,4 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -35,10 +34,6 @@ const StyledLink = styled(NavLink)`
   .active {
     border-bottom: 2px solid white;
   }
-
-  .default{
-    border-bottom: 2px solid white;
-  }
 `;
 
 const MiniNavBar = () => {
@@ -49,7 +44,6 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => (navData.isActive ? 'active' : '')}
-              aria-current="page"
               to="/destination/moon"
             >
               Moon
