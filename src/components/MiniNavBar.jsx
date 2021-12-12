@@ -19,7 +19,9 @@ const LinkContainer = styled.li`
   height: 28px;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(NavLink).attrs(({ className }) => ({
+  className: className.isActive ? 'active' : 'inactive',
+}))`
   color: #fff;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 14px;
@@ -31,7 +33,7 @@ const StyledLink = styled(NavLink)`
     border-bottom: 2px solid gray;
   }
 
-  .active {
+  &.active {
     border-bottom: 2px solid white;
   }
 `;
@@ -43,7 +45,7 @@ const MiniNavBar = () => {
         <StyledMenu>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={(navData) => navData.isActive}
               to="/destination/moon"
             >
               Moon
@@ -51,7 +53,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={(navData) => navData.isActive}
               to="/destination/mars"
             >
               Mars
@@ -59,7 +61,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={(navData) => navData.isActive}
               to="/destination/europa"
             >
               Europa
@@ -67,7 +69,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? 'active' : '')}
+              className={(navData) => navData.isActive}
               to="/destination/titan"
             >
               Titan

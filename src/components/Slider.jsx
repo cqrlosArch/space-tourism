@@ -5,7 +5,9 @@ const Nav = styled.nav`
   text-align: center;
 `;
 
-const StyledLink = styled(NavLink)`
+const StyledLink = styled(NavLink).attrs(({ className }) => ({
+  className: className.isActive ? 'active' : 'inactive',
+}))`
   cursor: pointer;
   height: 10px;
   width: 10px;
@@ -27,20 +29,20 @@ const Slider = () => {
     <>
       <Nav>
         <StyledLink
-          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/douglashurley"
+          className={(navData) => navData.isActive}
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/markshuttleworth"
+          className={(navData) => navData.isActive}
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/victorglover"
+          className={(navData) => navData.isActive}
         />
         <StyledLink
-          className={(navData) => (navData.isActive ? '.active' : '')}
           to="/crew/Anoushehansari"
+          className={(navData) => navData.isActive}
         />
       </Nav>
     </>
