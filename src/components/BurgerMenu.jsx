@@ -8,9 +8,6 @@ const BurgerMenuStyled = styled.div`
   background-size: 50%;
   width: 50px;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   margin-right: 5px;
   right: 0;
