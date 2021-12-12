@@ -36,7 +36,7 @@ const CircleSlider = () => {
 			<Nav>
 				<StyledLink
 					className={(navData) => (navData.isActive ? ".active" : "")}
-					exact
+					aria-current="true"
 					to="/technology/launchvehicle"
 				>
 					1

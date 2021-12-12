@@ -1,5 +1,5 @@
-import { Outlet, NavLink } from 'react-router-dom';
-
+import { Outlet, NavLink, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -27,24 +27,29 @@ const StyledLink = styled(NavLink)`
   letter-spacing: 2.36px;
   text-transform: uppercase;
   text-decoration: none;
+
   &:hover {
     border-bottom: 2px solid gray;
   }
-  &.active {
+
+  .active {
+    border-bottom: 2px solid white;
+  }
+
+  .default{
     border-bottom: 2px solid white;
   }
 `;
 
 const MiniNavBar = () => {
-
-
   return (
     <>
       <Nav>
         <StyledMenu>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? '.active' : '')}
+              className={(navData) => (navData.isActive ? 'active' : '')}
+              aria-current="page"
               to="/destination/moon"
             >
               Moon
@@ -52,7 +57,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? '.active' : '')}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/destination/mars"
             >
               Mars
@@ -60,7 +65,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? '.active' : '')}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/destination/europa"
             >
               Europa
@@ -68,7 +73,7 @@ const MiniNavBar = () => {
           </LinkContainer>
           <LinkContainer>
             <StyledLink
-              className={(navData) => (navData.isActive ? '.active' : '')}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/destination/titan"
             >
               Titan

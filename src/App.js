@@ -23,42 +23,44 @@ function App() {
       <GlobalStyle />
       <Wrapper>
         <Header />
-        <Routes>
-          <Route index path="/" element={<HomePage />} />
-          <Route path="destination" element={<DestinationsPage />}>
-            <Route index element={<Destination dest={destinations[0]} />} />
-            {destinations.map((dest) => (
-              <Route
-                path={dest.name.toLowerCase()}
-                element={<Destination dest={dest} />}
-                key={dest.name}
-              />
-            ))}
-          </Route>
+        <main>
+          <Routes>
+            <Route index path="/" element={<HomePage />} />
+            <Route path="destination" element={<DestinationsPage />}>
+              <Route index element={<Destination dest={destinations[0]} />} />
+              {destinations.map((dest) => (
+                <Route
+                  path={dest.name.toLowerCase()}
+                  element={<Destination dest={dest} />}
+                  key={dest.name}
+                />
+              ))}
+            </Route>
 
-          <Route path="crew" element={<CrewPage />}>
-            <Route index element={<CrewTeam cr={crew[0]} />} />
-            {crew.map((el) => (
-              <Route
-                path={el.name.replace(/\s+/g, '').toLocaleLowerCase()}
-                element={<CrewTeam cr={el} />}
-                key={el.name}
-              />
-            ))}
-          </Route>
+            <Route path="crew" element={<CrewPage />}>
+              <Route index element={<CrewTeam cr={crew[0]} />} />
+              {crew.map((el) => (
+                <Route
+                  path={el.name.replace(/\s+/g, '').toLocaleLowerCase()}
+                  element={<CrewTeam cr={el} />}
+                  key={el.name}
+                />
+              ))}
+            </Route>
 
-          <Route path="technology" element={<TechnologiesPage />}>
-            <Route index element={<Technology tech={technology[0]} />} />
-            {technology.map((tech) => (
-              <Route
-                path={tech.name.replace(/\s+/g, '').toLocaleLowerCase()}
-                element={<Technology tech={tech} />}
-                key={tech.name}
-              />
-            ))}
-          </Route>
-          <Route path="*" element={<HomePage />} />
-        </Routes>
+            <Route path="technology" element={<TechnologiesPage />}>
+              <Route index element={<Technology tech={technology[0]} />} />
+              {technology.map((tech) => (
+                <Route
+                  path={tech.name.replace(/\s+/g, '').toLocaleLowerCase()}
+                  element={<Technology tech={tech} />}
+                  key={tech.name}
+                />
+              ))}
+            </Route>
+            <Route path="*" element={<HomePage />} />
+          </Routes>
+        </main>
       </Wrapper>
     </Router>
   );

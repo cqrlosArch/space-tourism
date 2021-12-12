@@ -71,7 +71,7 @@ const Technology = ({ tech }) => {
     
       <Hero>
 				<Title>The terminology...</Title>
-				<Name>{tech.name.toLowerCase()}</Name>
+				<Name>{tech.name}</Name>
 				<p>
 					{tech.description}
 				</p>
