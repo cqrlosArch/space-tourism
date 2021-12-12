@@ -14,7 +14,7 @@ const BurgerMenuStyled = styled.div`
   margin-right: 5px;
   position: relative;
   transition: background 0.3s ease-in-out;
-  z-index: 3;
+  z-index: 10;
 `;
 
 const BurgerMenu = ({ toggleNavbar,open }) => {
