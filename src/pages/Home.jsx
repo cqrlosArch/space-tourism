@@ -14,6 +14,7 @@ const HomeStyled = styled.section`
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  height: 100vh;
 `;
 
 const Hero = styled.div`
