@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { device } from '../breakpoints';
 
 const NavbarStyled = styled.nav`
   height: 100vh;
+
+  @media ${device.md} {
+    height: 96px;
+    width: 500px;
+   
+   
+  }
 `;
 
 const ListStyled = styled.ul`
@@ -19,10 +27,32 @@ const ListStyled = styled.ul`
     backdrop-filter: opacity(${({ open }) => (open ? '1' : '0')}) blur(2rem);
     background-color: rgba(255, 255, 255, 0.04);
   }
+
+  @media ${device.md} {
+    inset: 0;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    visibility: visible;
+    backdrop-filter: opacity(1) blur(2rem);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(0);
+   
+  }
 `;
 
 const ItemStyled = styled.li`
   margin-bottom: 3rem;
+
+  @media ${device.md} {
+    margin-bottom: 0;
+   
+    padding: 0.5rem;
+  }
 `;
 
 const LinkStyled = styled(NavLink)`
@@ -36,6 +66,9 @@ const LinkStyled = styled(NavLink)`
   & span {
     margin-right: 0.5rem;
     font-weight: 600;
+    @media ${device.md} {
+      display: none;
+    }
   }
 `;
 

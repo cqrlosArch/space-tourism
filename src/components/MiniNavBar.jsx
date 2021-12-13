@@ -1,10 +1,17 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { device } from '../breakpoints';
 
 const Nav = styled.nav`
   width: 238px;
   height: 28px;
   background-color: transparent;
+
+  
+	@media ${device.md} {
+		width: 285px;
+		height: 34px;
+	}
 `;
 
 const StyledMenu = styled.ul`
@@ -36,6 +43,12 @@ const StyledLink = styled(NavLink).attrs(({ className }) => ({
   &.active {
     border-bottom: 2px solid white;
   }
+
+  @media ${device.md} {
+		height: 34px;
+		font-size: 14px;
+		padding: 0;
+	}
 `;
 
 const MiniNavBar = () => {

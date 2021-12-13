@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import BurgerMenu from './BurgerMenu';
+import { device } from '../breakpoints';
 
 import logo from '../assets/shared/logo.svg';
 import { useState } from 'react';
@@ -22,6 +23,10 @@ const Logo = styled.img`
   margin:0 1rem;
   width: 40px;
   height: 40px;
+  @media ${device.tablet} {
+		width: 48px;
+		height: 48px;
+	}
 
 `;
 

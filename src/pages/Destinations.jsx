@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Outlet } from 'react-router-dom';
-
+import { device } from '../breakpoints';
 // import bgDesktop from '../assets/destination/background-destination-desktop.jpg';
-// import bgTablet from '../assets/destination/background-destination-tablet.jpg';
+import bgTablet from '../assets/destination/background-destination-tablet.jpg';
 import bgMobile from '../assets/destination/background-destination-mobile.jpg';
 
 const DestinationsStyled = styled.section`
@@ -16,6 +16,10 @@ const DestinationsStyled = styled.section`
   align-items: center;
   justify-content: flex-start;
   padding-top: 80px;
+  @media ${device.md} {
+    background-image: url(${bgTablet});
+    padding-top: 100px;
+  }
 `;
 
 const Title = styled.h5`
@@ -23,6 +27,10 @@ const Title = styled.h5`
     color: gray;
     font-weight: 700;
     padding-right: 18px;
+  }
+  @media ${device.md} {
+    align-self: flex-start;
+    margin-left: 2rem;
   }
 `;
 

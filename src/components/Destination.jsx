@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import MiniNavBar from './MiniNavBar';
+import { device } from '../breakpoints';
 
 const DestinationStyled = styled.article`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, min-content);
   place-items: center;
+  @media ${device.md} {
+    padding: 2rem;
+  }
 `;
 
 const DestPicture = styled.picture`
@@ -15,6 +19,11 @@ const DestPicture = styled.picture`
     object-fit: cover;
     width: 170px;
     height: 170px;
+    @media ${device.md} {
+		width: 300px;
+		height: 300px;
+	
+	}
   }
 `;
 
@@ -25,6 +34,9 @@ const DestName = styled.h2`
 const DestText = styled.p`
   text-align: center;
   padding: 0 2rem;
+  @media ${device.md} {
+    padding: 0 4rem;
+  }
 `;
 const DestSeparation = styled.hr`
   border: 1px solid #383b4b;
@@ -36,6 +48,11 @@ const DestInfo = styled.div`
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
+  @media ${device.md} {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
 `;
 
 const DestWrapper = styled.div`

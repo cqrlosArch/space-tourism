@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { device } from '../breakpoints';
 
 // import bgDesktop from '../assets/home/background-home-desktop.jpg';
-// import bgTablet from '../assets/home/background-home-tablet.jpg';
+import bgTablet from '../assets/home/background-home-tablet.jpg';
 import bgMobile from '../assets/home/background-home-mobile.jpg';
 
 const HomeStyled = styled.section`
@@ -15,6 +16,10 @@ const HomeStyled = styled.section`
   flex-direction: column;
   gap: 40px;
   height: 100vh;
+  @media ${device.md} {
+    background-image: url(${bgTablet});
+    justify-content: space-around;
+  }
 `;
 
 const Hero = styled.div`
@@ -25,6 +30,14 @@ const Hero = styled.div`
   font-family: var(--bellefair);
   > * {
     margin-bottom: 16px;
+  }
+  & h1{
+    margin-top:1rem;
+  }
+  @media ${device.md} {
+
+    width: 450px;
+    height: 334px;
   }
 `;
 
@@ -42,6 +55,15 @@ const Button = styled(Link)`
   text-transform: uppercase;
   aspect-ratio: 1;
   text-decoration: none;
+
+  @media ${device.md} {
+    margin-top: 0;
+    width: 242px;
+    height: 242px;
+    font-size: 32px;
+    line-height: 36.67px;
+    letter-spacing: 2px;
+  }
 
   &::after {
     content: '';

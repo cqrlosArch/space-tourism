@@ -44,14 +44,12 @@ const CircleSlider = () => {
         </StyledLink>
         <StyledLink
           className={(navData) => navData.isActive}
-          exact
           to="/technology/spaceport"
         >
           2
         </StyledLink>
         <StyledLink
           className={(navData) => navData.isActive}
-          exact
           to="/technology/spacecapsule"
         >
           3

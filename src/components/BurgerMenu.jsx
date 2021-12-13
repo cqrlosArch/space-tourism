@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import close from '../assets/shared/icon-close.svg';
 import hamburger from '../assets/shared/icon-hamburger.svg';
+import { device } from '../breakpoints';
+
 
 const BurgerMenuStyled = styled.div`
   background: ${({ open }) => (open ? `url(${close})` : `url(${hamburger})`)}
@@ -14,6 +16,9 @@ const BurgerMenuStyled = styled.div`
   position: absolute;
   transition: background 0.3s ease-in-out;
   z-index: 10;
+  @media ${device.md} {
+		display: none;
+	}
 `;
 
 const BurgerMenu = ({ toggleNavbar, open }) => {
