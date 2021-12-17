@@ -31,11 +31,10 @@ const Hero = styled.div`
   > * {
     margin-bottom: 16px;
   }
-  & h1{
-    margin-top:1rem;
+  & h1 {
+    margin-top: 1rem;
   }
   @media ${device.md} {
-
     width: 450px;
     height: 334px;
   }
@@ -60,7 +59,7 @@ const Button = styled(Link)`
     margin-top: 0;
     width: 242px;
     height: 242px;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 36.67px;
     letter-spacing: 2px;
   }
