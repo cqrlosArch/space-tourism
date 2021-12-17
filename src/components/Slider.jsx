@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { device } from '../breakpoints';
 
 const Nav = styled.nav`
   text-align: center;
@@ -16,6 +17,11 @@ const StyledLink = styled(NavLink).attrs(({ className }) => ({
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+  @media ${device.md} {
+    height: 15px;
+    width: 15px;
+    margin: 0 12px;
+  }
   &:hover {
     background-color: #717171;
   }

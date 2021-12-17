@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import CircleSlider from './CircleSlider';
+import { device } from '../breakpoints';
 
 const TechnologyStyled = styled.article`
   display: grid;
@@ -8,6 +9,9 @@ const TechnologyStyled = styled.article`
   grid-template-columns: 327px;
   grid-template-rows: repeat(3, min-content);
   margin-bottom: 2rem;
+  @media ${device.md} {
+    grid-template-columns: 450px;
+  }
 `;
 
 
@@ -40,11 +44,17 @@ const Title = styled.div`
 	text-transform: uppercase;
 	color: #d0d6f9;
 	margin-bottom: 8px;
+  @media ${device.md} {
+    margin-top:1rem;
+  }
 
 `;
 
 const Name = styled.h3`
 	margin-bottom: 16px;
+  @media ${device.md} {
+    margin:.5rem;
+  }
 `;
 
 
