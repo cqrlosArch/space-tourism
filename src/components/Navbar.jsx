@@ -8,8 +8,6 @@ const NavbarStyled = styled.nav`
   @media ${device.md} {
     height: 96px;
     width: 500px;
-   
-   
   }
 `;
 
@@ -41,7 +39,6 @@ const ListStyled = styled.ul`
     align-items: center;
     justify-content: space-around;
     transform: translateX(0);
-   
   }
 `;
 
@@ -50,12 +47,15 @@ const ItemStyled = styled.li`
 
   @media ${device.md} {
     margin-bottom: 0;
-   
+
     padding: 0.5rem;
   }
 `;
 
-const LinkStyled = styled(NavLink)`
+const LinkStyled = styled(NavLink).attrs(({ className }) => ({
+  className: className.isActive ? 'active' : 'inactive',
+  end: true
+}))`
   text-decoration: none;
   color: var(--white);
   font-family: var(--barlowCondensed);
@@ -70,6 +70,17 @@ const LinkStyled = styled(NavLink)`
       display: none;
     }
   }
+
+  @media ${device.xl} {
+    font-size: 16px;
+    padding: 36px 0;
+    &:hover {
+      border-bottom: 2px solid gray;
+    }
+    &.active {
+      border-bottom: 2px solid white;
+    }
+  }
 `;
 
 const Navbar = ({ open }) => {
@@ -77,41 +88,27 @@ const Navbar = ({ open }) => {
     <NavbarStyled>
       <ListStyled open={open}>
         <ItemStyled>
-          <LinkStyled
-            to="/"
-            className={({ isActive }) =>
-              'nav-link' + (isActive ? ' activated' : '')
-            }
-          >
+          <LinkStyled to="/" className={(navData) => navData.isActive}>
             <span>00</span>Home
           </LinkStyled>
         </ItemStyled>
         <ItemStyled>
           <LinkStyled
             to="/destination"
-            className={({ isActive }) =>
-              'nav-link' + (isActive ? ' activated' : '')
-            }
+            className={(navData) => navData.isActive}
           >
             <span>01</span>Destination
           </LinkStyled>
         </ItemStyled>
         <ItemStyled>
-          <LinkStyled
-            to="/crew"
-            className={({ isActive }) =>
-              'nav-link' + (isActive ? ' activated' : '')
-            }
-          >
+          <LinkStyled to="/crew" className={(navData) => navData.isActive}>
             <span>02</span>Crew
           </LinkStyled>
         </ItemStyled>
         <ItemStyled>
           <LinkStyled
             to="/technology"
-            className={({ isActive }) =>
-              'nav-link' + (isActive ? ' activated' : '')
-            }
+            className={(navData) => navData.isActive}
           >
             <span>03</span>Technology
           </LinkStyled>

@@ -7,11 +7,10 @@ const Nav = styled.nav`
   height: 28px;
   background-color: transparent;
 
-  
-	@media ${device.md} {
-		width: 285px;
-		height: 34px;
-	}
+  @media ${device.md} {
+    width: 285px;
+    height: 34px;
+  }
 `;
 
 const StyledMenu = styled.ul`
@@ -28,6 +27,7 @@ const LinkContainer = styled.li`
 
 const StyledLink = styled(NavLink).attrs(({ className }) => ({
   className: className.isActive ? 'active' : 'inactive',
+  end: true
 }))`
   color: #fff;
   font-family: 'Barlow Condensed', sans-serif;
@@ -40,15 +40,23 @@ const StyledLink = styled(NavLink).attrs(({ className }) => ({
     border-bottom: 2px solid gray;
   }
 
-  &.active {
+  &.inactive {
+    border-bottom:none;
+  }
+
+  &.active,
+  &.default {
     border-bottom: 2px solid white;
   }
 
+
+ 
+
   @media ${device.md} {
-		height: 34px;
-		font-size: 14px;
-		padding: 0;
-	}
+    height: 34px;
+    font-size: 14px;
+    padding: 0;
+  }
 `;
 
 const MiniNavBar = () => {
@@ -59,7 +67,7 @@ const MiniNavBar = () => {
           <LinkContainer>
             <StyledLink
               className={(navData) => navData.isActive}
-              to="/destination/moon"
+              to="/destination"
             >
               Moon
             </StyledLink>

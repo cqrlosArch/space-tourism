@@ -25,7 +25,7 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route index path="/" element={<HomePage />} />
+            <Route index element={<HomePage />} />
             <Route path="destination" element={<DestinationsPage />}>
               <Route index element={<Destination dest={destinations[0]} />} />
               {destinations.map((dest) => (

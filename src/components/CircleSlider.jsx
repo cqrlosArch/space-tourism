@@ -8,6 +8,7 @@ const Nav = styled.nav`
 
 const StyledLink = styled(NavLink).attrs(({ className }) => ({
   className: className.isActive ? 'active' : 'inactive',
+  end: true
 }))`
   font-family: 'Bellefair', serif;
   font-size: 16px;
@@ -46,7 +47,7 @@ const CircleSlider = () => {
         <StyledLink
           className={(navData) => navData.isActive}
           aria-current="true"
-          to="/technology/launchvehicle"
+          to="/technology"
         >
           1
         </StyledLink>
