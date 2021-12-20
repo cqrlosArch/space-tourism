@@ -8,7 +8,8 @@ const DestinationStyled = styled.article`
   grid-template-rows: repeat(2, min-content);
   place-items: center;
   margin-top: 100px;
-  @media ${device.desktop} {
+  margin-bottom: 100px;
+  @media ${device.xl} {
     margin: 0 160px;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
@@ -75,7 +76,7 @@ const DestInfo = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+
   @media ${device.md} {
     width: 100%;
     flex-direction: row;
@@ -92,7 +93,6 @@ const DestWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  margin-bottom: 2rem;
 
   & .info-title {
     font-family: 'Barlow Condensed', sans-serif;
@@ -112,7 +112,13 @@ const DestWrapper = styled.div`
   @media ${device.xl} {
     margin-right: 80px;
     min-width: 160px;
-    
+  }
+`;
+
+const StyledNavBar = styled.div`
+  margin-bottom: 20px;
+  @media ${device.md} {
+    margin-bottom: 32px;
   }
 `;
 
@@ -136,7 +142,6 @@ const Hero = styled.div`
     align-self: flex-start;
     margin-top: 64px;
     justify-self: flex-start;
-    margin-bottom: 2rem;
   }
 `;
 
@@ -155,7 +160,9 @@ const Destination = ({ dest }) => {
       </DestPicture>
 
       <Hero>
-        <MiniNavBar />
+        <StyledNavBar>
+          <MiniNavBar />
+        </StyledNavBar>
         <DestName>{dest.name}</DestName>
         <DestText>{dest.description}</DestText>
         <DestSeparation />

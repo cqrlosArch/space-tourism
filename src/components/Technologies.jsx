@@ -8,7 +8,6 @@ const TechnologyStyled = styled.article`
   justify-self: center;
   grid-template-columns: 327px;
   grid-template-rows: repeat(3, min-content);
-  margin-top: 140px;
   @media ${device.md} {
     grid-template-columns: 458px;
     margin-top: 220px;
