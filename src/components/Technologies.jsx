@@ -50,7 +50,7 @@ const Hero = styled.div`
     grid-row: 1/2;
     width: 490px;
     text-align: start;
-    margin-right: 130px;
+      padding-right:2rem;
     align-self: center;
   }
 `;
