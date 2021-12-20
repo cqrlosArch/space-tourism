@@ -7,7 +7,7 @@ const DestinationStyled = styled.article`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, min-content);
   place-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
   @media ${device.xl} {
     margin: 0 160px;
