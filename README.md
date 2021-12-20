@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/cqrlosArch/space-tourism)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/website-with-react-react-router-v6-styled-components-yLgqzkS2o)
 - Live Site URL: [Add live site URL here](https://space-tourism-phi-six.vercel.app/)
 
 
