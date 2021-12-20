@@ -7,8 +7,12 @@ const DestinationStyled = styled.article`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, min-content);
   place-items: center;
-  @media ${device.md} {
-    padding: 2rem;
+  margin-top: 100px;
+  @media ${device.desktop} {
+    margin: 0 160px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    margin-top: 100px;
   }
 `;
 
@@ -20,16 +24,32 @@ const DestPicture = styled.picture`
     width: 170px;
     height: 170px;
     @media ${device.md} {
-		width: 300px;
-		height: 300px;
-	
-	}
+      width: 300px;
+      height: 300px;
+    }
+
+    @media ${device.xl} {
+      width: 445px;
+      height: 445px;
+    }
+  }
+
+  @media ${device.xl} {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-right: 150px;
+    align-self: flex-start;
+    justify-self: center;
   }
 `;
 
 const DestName = styled.h2`
   margin-top: 1rem;
   margin-bottom: 0;
+
+  @media ${device.xl} {
+    margin-bottom: 14px;
+  }
 `;
 const DestText = styled.p`
   text-align: center;
@@ -37,10 +57,18 @@ const DestText = styled.p`
   @media ${device.md} {
     padding: 0 4rem;
   }
+  @media ${device.xl} {
+    text-align: left;
+    padding: 0;
+  }
 `;
 const DestSeparation = styled.hr`
   border: 1px solid #383b4b;
   width: 85%;
+
+  @media ${device.xl} {
+    width: 100%;
+  }
 `;
 const DestInfo = styled.div`
   display: flex;
@@ -49,10 +77,14 @@ const DestInfo = styled.div`
   margin-top: 1rem;
   margin-bottom: 2rem;
   @media ${device.md} {
-		width: 100%;
-		flex-direction: row;
-		justify-content: space-evenly;
-	}
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @media ${device.xl} {
+    justify-content: flex-start;
+  }
 `;
 
 const DestWrapper = styled.div`
@@ -76,10 +108,39 @@ const DestWrapper = styled.div`
     text-transform: uppercase;
     margin: 0;
   }
+
+  @media ${device.xl} {
+    margin-right: 80px;
+    min-width: 160px;
+    
+  }
+`;
+
+const Hero = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 327px;
+  height: 448px;
+  text-align: center;
+  align-items: center;
+  @media ${device.md} {
+    width: 573px;
+  }
+  @media ${device.xl} {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 445px;
+    height: 472px;
+    align-items: start;
+    text-align: start;
+    align-self: flex-start;
+    margin-top: 64px;
+    justify-self: flex-start;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Destination = ({ dest }) => {
-
   return (
     <DestinationStyled>
       <DestPicture>
@@ -92,20 +153,23 @@ const Destination = ({ dest }) => {
           alt={dest.name}
         />
       </DestPicture>
-      <MiniNavBar />
-      <DestName>{dest.name}</DestName>
-      <DestText>{dest.description}</DestText>
-      <DestSeparation />
-      <DestInfo>
-        <DestWrapper>
-          <p className="info-title">AVG. DISTANCE</p>
-          <p className="info-subtitle">{dest.distance}</p>
-        </DestWrapper>
-        <DestWrapper>
-          <p className="info-title">EST. TRAVEL TIME</p>
-          <p className="info-subtitle">{dest.travel}</p>
-        </DestWrapper>
-      </DestInfo>
+
+      <Hero>
+        <MiniNavBar />
+        <DestName>{dest.name}</DestName>
+        <DestText>{dest.description}</DestText>
+        <DestSeparation />
+        <DestInfo>
+          <DestWrapper>
+            <p className="info-title">AVG. DISTANCE</p>
+            <p className="info-subtitle">{dest.distance}</p>
+          </DestWrapper>
+          <DestWrapper>
+            <p className="info-title">EST. TRAVEL TIME</p>
+            <p className="info-subtitle">{dest.travel}</p>
+          </DestWrapper>
+        </DestInfo>
+      </Hero>
     </DestinationStyled>
   );
 };

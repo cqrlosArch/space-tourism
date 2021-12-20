@@ -13,12 +13,12 @@ import CrewTeam from './components/CrewTeam';
 import Technology from './components/Technologies';
 import GlobalStyle from './components/GlobalStyle';
 
-import data from './data.json';
 
-const { destinations, crew, technology } = data;
+import { destinations, crew, technology } from './data.json'
 
 function App() {
   return (
+ 
     <Router>
       <GlobalStyle />
       <Wrapper>
@@ -63,6 +63,7 @@ function App() {
         </main>
       </Wrapper>
     </Router>
+ 
   );
 }
 

@@ -57,6 +57,10 @@ const StyledLink = styled(NavLink).attrs(({ className }) => ({
     font-size: 14px;
     padding: 0;
   }
+
+  @media ${device.xl} {
+		font-size: 16px;
+	}
 `;
 
 const MiniNavBar = () => {

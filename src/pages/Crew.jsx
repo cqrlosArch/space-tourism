@@ -38,6 +38,10 @@ const Title = styled.h5`
     align-self: flex-start;
     margin-left: 2rem;
   }
+  @media ${device.xl} {
+    margin-top: 100px;
+    margin-left: 180px;
+  }
 `;
 const Crew = () => {
   return (

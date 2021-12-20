@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { device } from '../breakpoints';
 
-// import bgDesktop from '../assets/home/background-home-desktop.jpg';
+import bgDesktop from '../assets/home/background-home-desktop.jpg';
 import bgTablet from '../assets/home/background-home-tablet.jpg';
 import bgMobile from '../assets/home/background-home-mobile.jpg';
 
@@ -19,6 +19,12 @@ const HomeStyled = styled.section`
   @media ${device.md} {
     background-image: url(${bgTablet});
     justify-content: space-around;
+  }
+  @media ${device.xl} {
+    background-image: url(${bgDesktop});
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 5rem;
   }
 `;
 
@@ -37,6 +43,11 @@ const Hero = styled.div`
   @media ${device.md} {
     width: 450px;
     height: 334px;
+  }
+  @media ${device.xl} {
+    width: 450px;
+    height: 382px;
+    text-align: start;
   }
 `;
 
@@ -67,7 +78,7 @@ const Button = styled(Link)`
   &::after {
     content: '';
     position: absolute;
-    z-index: -2;
+    z-index: 1;
     background: hsl(0 0% 100% / 0.1);
     width: 100%;
     height: 100%;

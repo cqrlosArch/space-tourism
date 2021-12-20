@@ -22,8 +22,8 @@ const DestinationsStyled = styled.section`
     padding-top: 100px;
   }
   @media ${device.xl} {
-		background-image: url(${bgDesktop});
-	}
+    background-image: url(${bgDesktop});
+  }
 `;
 
 const Title = styled.h5`
@@ -35,6 +35,11 @@ const Title = styled.h5`
   @media ${device.md} {
     align-self: flex-start;
     margin-left: 2rem;
+  }
+
+  @media ${device.xl} {
+    margin-top: 100px;
+    margin-left: 180px;
   }
 `;
 

@@ -9,6 +9,12 @@ const NavbarStyled = styled.nav`
     height: 96px;
     width: 500px;
   }
+
+  @media ${device.xl} {
+    padding-left: 123px;
+    width: 65vw;
+    height: 96px;
+  }
 `;
 
 const ListStyled = styled.ul`
@@ -40,6 +46,11 @@ const ListStyled = styled.ul`
     justify-content: space-around;
     transform: translateX(0);
   }
+
+  @media ${device.xl} {
+    padding-left: 80px;
+    justify-content: flex-start;
+  }
 `;
 
 const ItemStyled = styled.li`
@@ -50,11 +61,15 @@ const ItemStyled = styled.li`
 
     padding: 0.5rem;
   }
+
+  @media ${device.xl} {
+    margin-left: 20px;
+  }
 `;
 
 const LinkStyled = styled(NavLink).attrs(({ className }) => ({
   className: className.isActive ? 'active' : 'inactive',
-  end: true
+  end: true,
 }))`
   text-decoration: none;
   color: var(--white);
@@ -68,6 +83,9 @@ const LinkStyled = styled(NavLink).attrs(({ className }) => ({
     font-weight: 600;
     @media ${device.md} {
       display: none;
+    }
+    @media ${device.xl} {
+      display: inline-block;
     }
   }
 

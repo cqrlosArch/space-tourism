@@ -8,7 +8,7 @@ const Nav = styled.nav`
 
 const StyledLink = styled(NavLink).attrs(({ className }) => ({
   className: className.isActive ? 'active' : 'inactive',
-  end: true
+  end: true,
 }))`
   font-family: 'Bellefair', serif;
   font-size: 16px;
@@ -37,6 +37,15 @@ const StyledLink = styled(NavLink).attrs(({ className }) => ({
     border: none;
     color: #0b0d17;
     background-color: #ffffff;
+  }
+
+  @media ${device.xl} {
+    display: block;
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    margin: 16px 0;
+    font-size: 32px;
   }
 `;
 
