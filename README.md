@@ -33,6 +33,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [React Router (v6)](https://reactrouter.com/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
 
 
